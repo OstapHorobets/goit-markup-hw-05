@@ -714,6 +714,8 @@ transform: translateY(101%);
   right: 0;
   bottom: 0;
   background: rgba(0, 0, 0, 0.2);
+
+  transition: opacity 250ms var(--cubic);
    
 }
 
@@ -723,6 +725,11 @@ transform: translateY(101%);
   pointer-events: none;
 }
 
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, 300%) scale(3);
+    
+}
+
 .modal {
   min-width: 528px;
   min-height: 581px;
@@ -730,9 +737,12 @@ transform: translateY(101%);
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  
+  transform: translate(-50%, -50%) scale(1);
+
+  transition: transform 300ms var(--cubic);
 }
+
+
 
 .modal-close {
   width: 11px;
